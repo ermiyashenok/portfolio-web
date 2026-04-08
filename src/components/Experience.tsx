@@ -21,7 +21,7 @@ export default function Experience() {
               
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-2 gap-2">
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">{exp.role}</h3>
-                <span className="text-[10px] font-mono font-bold text-cyan-600 dark:text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded">
+                <span className="text-[10px] font-mono font-bold text-cyan-700 dark:text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded">
                   {exp.period}
                 </span>
               </div>

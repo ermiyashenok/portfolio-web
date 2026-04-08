@@ -13,7 +13,7 @@ export default function Contact() {
         transition={{ duration: 0.6 }}
         className="w-full glass-card p-12 rounded-3xl text-center relative z-10"
       >
-        <div className="inline-block p-3 rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 mb-8">
+        <div className="inline-block p-3 rounded-2xl bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 mb-8">
           <Mail size={32} />
         </div>
         
