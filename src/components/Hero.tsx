@@ -19,12 +19,12 @@ export default function Hero() {
           <span>SYSTEM_READY: v1.0.4</span>
         </div>
 
-        <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 tracking-tighter">
-          Ermiyas <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Henok</span>
+        <h1 className="text-6xl md:text-8xl font-bold text-slate-900 dark:text-white mb-4 tracking-tighter">
+          Ermiyas <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600 dark:from-cyan-400 dark:to-blue-500">Henok</span>
         </h1>
         
         <div className="flex items-center gap-4 mb-8">
-          <h3 className="text-2xl md:text-3xl font-mono text-slate-400">
+          <h3 className="text-2xl md:text-3xl font-mono text-slate-600 dark:text-slate-400">
             &gt; Software Engineer
           </h3>
           <motion.div 
@@ -34,9 +34,9 @@ export default function Hero() {
           />
         </div>
 
-        <p className="max-w-xl text-lg text-slate-400 mb-10 leading-relaxed font-sans">
+        <p className="max-w-xl text-lg text-slate-600 dark:text-slate-400 mb-10 leading-relaxed font-sans">
           Specializing in high-performance distributed systems and 
-          <span className="text-slate-200"> artificial intelligence integration</span>. 
+          <span className="text-slate-900 dark:text-slate-200 font-medium"> artificial intelligence integration</span>. 
           Architecting the future one commit at a time.
         </p>
         

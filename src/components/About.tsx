@@ -16,18 +16,18 @@ export default function About() {
           <div className="absolute -top-4 -left-4 w-8 h-8 border-t-2 border-l-2 border-cyan-500" />
           <div className="absolute -bottom-4 -right-4 w-8 h-8 border-b-2 border-r-2 border-cyan-500" />
 
-          <h2 className="text-3xl font-mono font-bold mb-8 tracking-tight text-white flex items-center gap-3">
+          <h2 className="text-3xl font-mono font-bold mb-8 tracking-tight text-slate-900 dark:text-white flex items-center gap-3">
             <span className="text-cyan-500">01.</span> PROFILE_OVERVIEW
           </h2>
           
-          <div className="space-y-6 text-lg text-slate-400 leading-relaxed font-sans">
+          <div className="space-y-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
             <p>
-              I am a Computer Science graduate specialized in <span className="text-white">full-stack development</span> 
-              and <span className="text-cyan-400">artificial intelligence</span>. My approach combines rigorous 
+              I am a Computer Science graduate specialized in <span className="text-slate-900 dark:text-white font-medium">full-stack development</span> 
+              and <span className="text-cyan-600 dark:text-cyan-400">artificial intelligence</span>. My approach combines rigorous 
               engineering principles with creative problem-solving to deliver scalable digital solutions.
             </p>
             <p>
-              Currently focused on building <span className="text-white italic">intelligent systems</span> that 
+              Currently focused on building <span className="text-slate-900 dark:text-white italic font-medium">intelligent systems</span> that 
               bridge the gap between complex data and intuitive user experiences. I believe in the power of 
               open-source and continuous iteration.
             </p>

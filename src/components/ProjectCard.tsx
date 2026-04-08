@@ -85,12 +85,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             </span>
           ))}
         </div>
-        <h3 className="text-lg font-bold mb-2 text-white group-hover:text-cyan-400 transition-colors">{project.title}</h3>
-        <p className="text-slate-400 text-sm leading-relaxed mb-4 font-sans">
+        <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">{project.title}</h3>
+        <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 font-sans">
           {project.description}
         </p>
-        <div className="pt-4 border-t border-white/5 flex justify-between items-center">
-          <span className="text-[10px] font-mono text-slate-600 uppercase">Status: Deployed</span>
+        <div className="pt-4 border-t border-slate-200 dark:border-white/5 flex justify-between items-center">
+          <span className="text-[10px] font-mono text-slate-500 dark:text-slate-600 uppercase">Status: Deployed</span>
           <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
         </div>
       </div>

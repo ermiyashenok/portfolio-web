@@ -7,12 +7,32 @@
 }
 
 @layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 15 23 42;
+    --muted: 100 116 139;
+    --border: 226 232 240;
+    --card: 248 250 252;
+    --grid: rgba(0, 0, 0, 0.05);
+  }
+
+  .dark {
+    --background: 0 0 0;
+    --foreground: 203 213 225;
+    --muted: 100 116 139;
+    --border: 30 41 59;
+    --card: 15 23 42;
+    --grid: rgba(255, 255, 255, 0.05);
+  }
+
   html {
     scroll-behavior: smooth;
   }
   
   body {
-    @apply bg-black text-slate-300 font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200;
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+    @apply font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200 transition-colors duration-300;
   }
 }
 
@@ -23,8 +43,8 @@
 
   .tech-grid {
     background-image: 
-      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      linear-gradient(to right, var(--grid) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 
@@ -33,6 +53,7 @@
   }
 
   .glass-card {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    background-color: rgba(var(--card), 0.5);
+    @apply backdrop-blur-md border border-white/10 dark:border-white/5;
   }
 }

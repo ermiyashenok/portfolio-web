@@ -17,12 +17,12 @@ export default function Projects() {
       >
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <h2 className="text-3xl font-mono font-bold tracking-tight mb-2 text-white">
+            <h2 className="text-3xl font-mono font-bold tracking-tight mb-2 text-slate-900 dark:text-white">
               <span className="text-cyan-500">03.</span> RECENT_BUILDS
             </h2>
             <p className="text-slate-500 font-mono text-xs uppercase tracking-widest">Compiling project database...</p>
           </div>
-          <a href="https://github.com" className="text-cyan-500 font-mono text-sm hover:text-white transition-colors flex items-center gap-2">
+          <a href="https://github.com/ermiyashenok" className="text-cyan-600 dark:text-cyan-500 font-mono text-sm hover:text-slate-900 dark:hover:text-white transition-colors flex items-center gap-2">
             GIT_LOG --ALL <ArrowRight size={16} />
           </a>
         </div>

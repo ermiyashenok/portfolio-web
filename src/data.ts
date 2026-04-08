@@ -5,7 +5,7 @@ export const projects: Project[] = [
     id: '1',
     title: 'AI Personal Finance Manager App',
     description: 'AI-powered personal finance application that tracks expenses and provides budgeting recommendations using machine learning models to categorize spending patterns.',
-    tags: ['React', 'Python', 'AI', 'Tailwind'],
+    tags: ['Flutter', 'Python', 'AI', 'Machine Learning'],
     github: 'https://github.com/ermiyashenok',
     images: [
       'https://picsum.photos/seed/finance1/800/450',
@@ -32,7 +32,7 @@ export const experiences: Experience[] = [
     id: '1',
     company: 'Delta Electronic Trading',
     role: 'UI/UX Design Intern',
-    period: '2023 - Present',
+    period: '2025 (3 Months)',
     description: 'Responsible for creating intuitive user interfaces and prototypes for trading platforms. Collaborated with developers to ensure design feasibility and user-centric features.'
   }
 ];

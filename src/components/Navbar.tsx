@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -26,11 +27,13 @@ export default function Navbar() {
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black/80 backdrop-blur-md py-4 border-b border-white/5' : 'bg-transparent py-6'
+        isScrolled 
+          ? 'bg-white/80 dark:bg-black/80 backdrop-blur-md py-4 border-b border-slate-200 dark:border-white/5' 
+          : 'bg-transparent py-6'
       }`}
     >
       <div className="container-padding flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2 text-xl font-mono font-bold tracking-tighter text-white group">
+        <a href="#home" className="flex items-center gap-2 text-xl font-mono font-bold tracking-tighter text-slate-900 dark:text-white group">
           <span className="text-cyan-500 group-hover:rotate-180 transition-transform duration-500">&lt;/&gt;</span>
           <span>EH.SYS</span>
         </a>
@@ -41,26 +44,30 @@ export default function Navbar() {
             <a 
               key={link.name} 
               href={link.href}
-              className="text-xs font-mono uppercase tracking-widest text-slate-400 hover:text-cyan-400 transition-colors"
+              className="text-xs font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
             >
               {link.name}
             </a>
           ))}
-          <a 
-            href="#contact" 
-            className="px-5 py-2 bg-white text-slate-950 text-xs font-bold uppercase tracking-widest rounded hover:bg-cyan-400 transition-colors"
-          >
-            Connect
-          </a>
+          <div className="flex items-center gap-4">
+            <a 
+              href="#contact" 
+              className="px-5 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-950 text-xs font-bold uppercase tracking-widest rounded hover:bg-cyan-500 dark:hover:bg-cyan-400 transition-colors"
+            >
+              Connect
+            </a>
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden p-2 text-slate-900"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-4 md:hidden">
+          <button 
+            className="p-2 text-slate-900 dark:text-white"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav */}
@@ -70,7 +77,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-slate-100 overflow-hidden"
+            className="md:hidden bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 overflow-hidden"
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
@@ -78,7 +85,7 @@ export default function Navbar() {
                   key={link.name} 
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium text-slate-600 hover:text-slate-900"
+                  className="text-lg font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                 >
                   {link.name}
                 </a>
