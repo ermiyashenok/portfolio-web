@@ -26,7 +26,7 @@ export default function Experience() {
                 </span>
               </div>
               
-              <h4 className="text-sm font-mono text-slate-500 uppercase tracking-widest mb-4">
+              <h4 className="text-sm font-mono text-slate-600 dark:text-slate-400 uppercase tracking-widest mb-4">
                 @ {exp.company}
               </h4>
               

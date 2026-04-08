@@ -13,7 +13,7 @@ export default function Contact() {
         transition={{ duration: 0.6 }}
         className="w-full glass-card p-12 rounded-3xl text-center relative z-10"
       >
-        <div className="inline-block p-3 rounded-2xl bg-cyan-500/10 text-cyan-400 mb-8">
+        <div className="inline-block p-3 rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 mb-8">
           <Mail size={32} />
         </div>
         
@@ -48,7 +48,7 @@ export default function Contact() {
                 href={social.href}
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-2 text-slate-500 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors group"
+                className="flex flex-col items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors group"
               >
                 <div className="p-4 bg-slate-100 dark:bg-white/5 rounded-xl border border-slate-200 dark:border-white/5 group-hover:border-cyan-500/30 transition-colors">
                   {social.icon}

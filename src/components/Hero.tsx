@@ -14,7 +14,7 @@ export default function Hero() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative z-10"
       >
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-600 dark:text-cyan-400 text-xs font-mono mb-6">
           <Terminal size={14} />
           <span>SYSTEM_READY: v1.0.4</span>
         </div>
@@ -57,14 +57,14 @@ export default function Hero() {
               href="https://github.com/ermiyashenok" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-slate-500 hover:text-cyan-400 transition-colors"
+              className="text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
               title="GitHub"
             >
               <Github size={28} />
             </a>
             <a 
               href="#" 
-              className="flex items-center gap-2 text-slate-500 hover:text-cyan-400 transition-colors font-mono text-sm"
+              className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors font-mono text-sm"
               title="Download CV"
             >
               <FileText size={20} />
@@ -79,7 +79,7 @@ export default function Hero() {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 0.4, x: 0 }}
         transition={{ delay: 0.5, duration: 1 }}
-        className="hidden lg:block absolute right-24 top-1/2 -translate-y-1/2 glass-card p-6 rounded-xl font-mono text-xs text-cyan-500/70 border-cyan-500/20"
+        className="hidden lg:block absolute right-24 top-1/2 -translate-y-1/2 glass-card p-6 rounded-xl font-mono text-xs text-slate-500 dark:text-cyan-500/70 border-slate-200 dark:border-cyan-500/20"
       >
         <pre>
 {`const engineer = {

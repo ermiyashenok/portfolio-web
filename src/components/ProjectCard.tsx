@@ -80,7 +80,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <div className="p-6">
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.map(tag => (
-            <span key={tag} className="text-[10px] font-mono uppercase tracking-tighter px-2 py-0.5 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded">
+            <span key={tag} className="text-[10px] font-mono uppercase tracking-tighter px-2 py-0.5 bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 rounded">
               {tag}
             </span>
           ))}
@@ -90,7 +90,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {project.description}
         </p>
         <div className="pt-4 border-t border-slate-200 dark:border-white/5 flex justify-between items-center">
-          <span className="text-[10px] font-mono text-slate-500 dark:text-slate-600 uppercase">Status: Deployed</span>
+          <span className="text-[10px] font-mono text-slate-600 dark:text-slate-500 uppercase">Status: Deployed</span>
           <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
         </div>
       </div>
