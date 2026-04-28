@@ -19,6 +19,7 @@ export const projects: Project[] = [
     description: 'A sophisticated Python-based system that uses anomaly detection algorithms to identify fraudulent transactions in real-time with high precision.',
     tags: ['Python', 'Scikit-learn', 'Machine Learning', 'Data Analysis'],
     github: 'https://github.com/ermiyashenok',
+    link: 'https://github.com/ermiyashenok',
     images: [
       'https://picsum.photos/seed/fraud1/800/450',
       'https://picsum.photos/seed/fraud2/800/450',

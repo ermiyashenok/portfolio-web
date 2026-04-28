@@ -23,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   return (
     <motion.a 
-      href="https://google.com"
+      href={project.link || "https://google.com"}
       target="_blank"
       rel="noopener noreferrer"
       whileHover={{ y: -5 }}
