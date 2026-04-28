@@ -63,7 +63,9 @@ export default function Hero() {
               <Github size={28} />
             </a>
             <a 
-              href="#" 
+              href="/ermiyas-henok.pdf" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors font-mono text-sm"
               title="Download CV"
             >
