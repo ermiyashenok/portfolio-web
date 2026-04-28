@@ -22,9 +22,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   }, [images.length]);
 
   return (
-    <motion.div 
+    <motion.a 
+      href="https://google.com"
+      target="_blank"
+      rel="noopener noreferrer"
       whileHover={{ y: -5 }}
-      className="group glass-card rounded-xl overflow-hidden shadow-lg transition-all hover:border-cyan-500/50"
+      className="group glass-card rounded-xl overflow-hidden shadow-lg transition-all hover:border-cyan-500/50 block cursor-pointer"
     >
       <div className="aspect-video bg-slate-900 flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 tech-grid opacity-20" />
@@ -64,16 +67,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         )}
 
         <div className="absolute inset-0 bg-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 z-30">
-          {project.github && (
-            <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-3 bg-white rounded-lg text-slate-950 hover:scale-110 transition-transform shadow-xl">
-              <Github size={20} />
-            </a>
-          )}
-          {project.link && (
-            <a href={project.link} target="_blank" rel="noopener noreferrer" className="p-3 bg-white rounded-lg text-slate-950 hover:scale-110 transition-transform shadow-xl">
-              <ExternalLink size={20} />
-            </a>
-          )}
+          <div className="p-3 bg-white rounded-lg text-slate-950 hover:scale-110 transition-transform shadow-xl">
+            <ExternalLink size={20} />
+          </div>
         </div>
       </div>
       
@@ -94,7 +90,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
         </div>
       </div>
-    </motion.div>
+    </motion.a>
   );
 }
 

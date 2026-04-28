@@ -1,4 +1,4 @@
-import { Project, Experience, SkillCategory } from './types';
+import { Project, Experience, SkillCategory, Certificate } from './types';
 
 export const projects: Project[] = [
   {
@@ -45,5 +45,16 @@ export const skillCategories: SkillCategory[] = [
   {
     title: 'Frameworks & Tools',
     skills: ['Flutter', 'Pandas', 'Scikit-learn', 'Git', 'Figma', 'Tailwind CSS']
+  }
+];
+
+export const certificates: Certificate[] = [
+  {
+    id: '1',
+    title: 'Placeholder Certificate',
+    issuer: 'Certifying Organization',
+    date: '2025',
+    description: 'Add your certificate description here.',
+    link: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
   }
 ];

@@ -20,3 +20,12 @@ export interface SkillCategory {
   title: string;
   skills: string[];
 }
+
+export interface Certificate {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  description?: string;
+  link?: string;
+}
