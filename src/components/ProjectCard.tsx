@@ -29,7 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       whileHover={{ y: -5 }}
       className="group glass-card rounded-xl overflow-hidden shadow-lg transition-all hover:border-cyan-500/50 block cursor-pointer"
     >
-      <div className="aspect-video bg-slate-900 flex items-center justify-center relative overflow-hidden p-1">
+      <div className="aspect-video bg-slate-900 flex items-center justify-center relative overflow-hidden p-0">
         <div className="absolute inset-0 tech-grid opacity-20" />
         
         <AnimatePresence mode="wait">
@@ -42,7 +42,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className="w-full h-full object-contain transition-opacity relative z-10"
+              className="w-full h-full object-cover transition-opacity relative z-10"
               referrerPolicy="no-referrer"
             />
           ) : (
@@ -51,6 +51,24 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             </div>
           )}
         </AnimatePresence>
+
+        {/* Manual Navigation */}
+        {images.length > 1 && (
+          <>
+            <button 
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length); }}
+              className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 bg-black/50 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-40 hover:bg-black/70"
+            >
+              <ChevronLeft size={16} />
+            </button>
+            <button 
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCurrentImageIndex((prev) => (prev + 1) % images.length); }}
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 bg-black/50 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-40 hover:bg-black/70"
+            >
+              <ChevronRight size={16} />
+            </button>
+          </>
+        )}
 
         {/* Carousel Indicators */}
         {images.length > 1 && (
@@ -66,8 +84,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           </div>
         )}
 
-        <div className="absolute inset-0 bg-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 z-30">
-          <div className="p-3 bg-white rounded-lg text-slate-950 hover:scale-110 transition-transform shadow-xl">
+        <div className="absolute inset-0 bg-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 z-30 pointer-events-none">
+          <div className="p-3 bg-white rounded-lg text-slate-950 shadow-xl pointer-events-auto">
             <ExternalLink size={20} />
           </div>
         </div>

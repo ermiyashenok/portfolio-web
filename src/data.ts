@@ -21,6 +21,8 @@ export const projects: Project[] = [
     tags: ['React', 'TypeScript', 'Node.js', 'Tailwind CSS'],
     github: 'https://github.com/ermiyashenok',
     images: [
+      '/projects/account manger web/Screenshot 2026-05-02 131142.png',
+      '/projects/account manger web/Screenshot 2026-05-02 131159.png',
       '/projects/account manger web/Screenshot 2026-05-02 131305.png',
       '/projects/account manger web/Screenshot 2026-05-02 131518.png'
     ]
