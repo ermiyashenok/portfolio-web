@@ -29,7 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       whileHover={{ y: -5 }}
       className="group glass-card rounded-xl overflow-hidden shadow-lg transition-all hover:border-cyan-500/50 block cursor-pointer"
     >
-      <div className="aspect-video bg-slate-900 flex items-center justify-center relative overflow-hidden">
+      <div className="aspect-video bg-slate-900 flex items-center justify-center relative overflow-hidden p-1">
         <div className="absolute inset-0 tech-grid opacity-20" />
         
         <AnimatePresence mode="wait">
@@ -39,10 +39,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               src={images[currentImageIndex]} 
               alt={project.title} 
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.6 }}
+              animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className="absolute inset-0 w-full h-full object-cover group-hover:opacity-100 transition-opacity"
+              className="w-full h-full object-contain transition-opacity relative z-10"
               referrerPolicy="no-referrer"
             />
           ) : (

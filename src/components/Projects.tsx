@@ -27,9 +27,11 @@ export default function Projects() {
           </a>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex gap-8 overflow-x-auto pb-8 scrollbar-hide snap-x snap-mandatory">
           {projects.map(project => (
-            <ProjectCard key={project.id} project={project} />
+            <div key={project.id} className="min-w-[300px] md:min-w-[400px] snap-center">
+              <ProjectCard project={project} />
+            </div>
           ))}
         </div>
       </motion.div>
