@@ -25,6 +25,17 @@ export const projects: Project[] = [
       'https://picsum.photos/seed/fraud2/800/450',
       'https://picsum.photos/seed/fraud3/800/450'
     ]
+  },
+  {
+    id: '3',
+    title: 'Anarch Streaming',
+    description: 'A premium, high-performance streaming platform with a sleek dark interface, featuring movie discovery, trending global content, and detailed movie previews.',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'API Integration'],
+    link: 'https://anarch-stream.vercel.app',
+    github: 'https://github.com/ermiyashenok',
+    images: [
+      '/projects/anarch-stream.png'
+    ]
   }
 ];
 
