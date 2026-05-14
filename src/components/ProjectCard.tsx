@@ -9,6 +9,7 @@ export interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const images = project.images || [];
 
   useEffect(() => {
@@ -30,6 +31,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       target="_blank"
       rel="noopener noreferrer"
       whileHover={{ y: -5 }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       className="group glass-card rounded-xl overflow-hidden shadow-lg transition-all hover:border-cyan-500/50 block cursor-pointer"
     >
       <div className="aspect-video bg-slate-900 flex items-center justify-center relative overflow-hidden p-0">
@@ -107,11 +110,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
 
         {/* Tags Hover Overlay */}
-        <div className="absolute inset-0 bg-slate-50 dark:bg-slate-900/95 p-6 -translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out flex flex-col justify-center z-20">
+        <div className="absolute inset-0 bg-slate-50 dark:bg-slate-900/95 p-6 -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out flex flex-col justify-center z-20">
           <div className="text-[10px] font-mono text-cyan-600 dark:text-cyan-400 mb-4 uppercase tracking-[0.2em] border-b border-cyan-500/20 pb-2">
             Technical Stack
           </div>
-          <div className="flex flex-wrap gap-3">
+          <motion.div 
+            initial={false}
+            animate={isHovered ? "show" : "hidden"}
+            variants={{
+              show: {
+                transition: {
+                  staggerChildren: 0.1,
+                  delayChildren: 0.2
+                }
+              },
+              hidden: {
+                transition: {
+                  staggerChildren: 0.05,
+                  staggerDirection: -1
+                }
+              }
+            }}
+            className="flex flex-wrap gap-3"
+          >
             {project.tags.map(tag => {
               const iconMap: Record<string, string> = {
                 'React': 'react',
@@ -128,7 +149,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               };
               const iconName = iconMap[tag] || 'code';
               return (
-                <div key={tag} className="group/tag relative">
+                <motion.div 
+                  key={tag} 
+                  variants={{
+                    show: { opacity: 1, y: 0, scale: 1 },
+                    hidden: { opacity: 0, y: 10, scale: 0.8 }
+                  }}
+                  className="group/tag relative"
+                >
                   <div className="p-1.5 bg-white/5 border border-white/10 rounded-lg hover:border-cyan-500/50 hover:scale-110 transition-all duration-300">
                     <img 
                       src={`https://skillicons.dev/icons?i=${iconName}`} 
@@ -140,10 +168,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-slate-900 text-white text-[8px] font-mono rounded opacity-0 group-hover/tag:opacity-100 transition-opacity whitespace-nowrap z-30 border border-white/10 pointer-events-none">
                     {tag.toUpperCase()}
                   </span>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
           <div className="mt-8">
             <div className="inline-flex items-center gap-2 px-6 py-2.5 bg-cyan-500 text-slate-950 rounded font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-cyan-500/50">
               View Project
