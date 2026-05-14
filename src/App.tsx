@@ -18,9 +18,6 @@ export default function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen relative">
-        <div className="fixed top-6 right-6 z-[60]">
-          <ThemeToggle />
-        </div>
         <Navbar />
         <main>
           <Hero />

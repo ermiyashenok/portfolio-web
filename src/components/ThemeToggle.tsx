@@ -11,7 +11,7 @@ const ThemeToggle: React.FC = () => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       onClick={toggleTheme}
-      className="p-3 rounded-full bg-white/10 dark:bg-black/20 backdrop-blur-md border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 shadow-lg transition-colors"
+      className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
       aria-label="Toggle theme"
     >
       {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}

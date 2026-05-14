@@ -22,7 +22,7 @@ export default function Projects() {
             </h2>
             <p className="text-slate-600 dark:text-slate-400 font-mono text-xs uppercase tracking-widest">Compiling project database...</p>
           </div>
-          <a href="https://google.com" target="_blank" rel="noopener noreferrer" className="text-cyan-600 dark:text-cyan-500 font-mono text-sm hover:text-slate-900 dark:hover:text-white transition-colors flex items-center gap-2">
+          <a href="https://github.com/ermiyashenok" target="_blank" rel="noopener noreferrer" className="text-cyan-600 dark:text-cyan-500 font-mono text-sm hover:text-slate-900 dark:hover:text-white transition-colors flex items-center gap-2">
             GIT_LOG --ALL <ArrowRight size={16} />
           </a>
         </div>

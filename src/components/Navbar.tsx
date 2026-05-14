@@ -50,7 +50,8 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 border-l border-slate-200 dark:border-white/10 pl-8">
+            <ThemeToggle />
             <a 
               href="#contact" 
               className="px-5 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-950 text-xs font-bold uppercase tracking-widest rounded hover:bg-cyan-500 dark:hover:bg-cyan-400 transition-colors"
@@ -61,7 +62,8 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="flex items-center gap-4 md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
           <button 
             className="p-2 text-slate-900 dark:text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
