@@ -48,6 +48,19 @@ export const projects: Project[] = [
       '/projects/python proj/images.jpg',
       '/projects/python proj/images (1).jpg'
     ]
+  },
+  {
+    id: '5',
+    title: 'Letterboxd Profile Scraper',
+    description: 'A modular Python-based web scraper designed to extract comprehensive film data from Letterboxd lists, featuring concurrent multi-threaded scraping, rate-limiting, and robust CSV/JSON data generation.',
+    tags: ['Python', 'Web Scraping', 'BeautifulSoup', 'Multi-threading'],
+    github: 'https://github.com/ermiyashenok/l_boxd',
+    images: [
+      '/projects/l_boxd/Screenshot 2026-05-18 092952.png',
+      '/projects/l_boxd/Screenshot 2026-05-18 093013.png',
+      '/projects/l_boxd/py.png',
+      '/projects/l_boxd/wp14813365.webp'
+    ]
   }
 ];
 

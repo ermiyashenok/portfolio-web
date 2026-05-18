@@ -27,9 +27,9 @@ export default function Projects() {
           </a>
         </div>
         
-        <div className="flex gap-8 overflow-x-auto pb-8 scrollbar-hide snap-x snap-mandatory">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map(project => (
-            <div key={project.id} className="min-w-[300px] md:min-w-[400px] snap-center">
+            <div key={project.id} className="w-full">
               <ProjectCard project={project} />
             </div>
           ))}
