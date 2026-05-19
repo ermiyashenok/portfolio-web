@@ -66,6 +66,13 @@ export const projects: Project[] = [
 
 export const experiences: Experience[] = [
   {
+    id: '2',
+    company: 'Self-Employed',
+    role: 'Independent Developer',
+    period: '2025 - Present',
+    description: 'Building and publishing scalable web & mobile projects, including web-scraping utilities, personal accounting dashboards, and machine learning models. Actively designing and maintaining solutions while staying up-to-date with modern cross-platform engineering workflows.'
+  },
+  {
     id: '1',
     company: 'Delta Electronic Trading',
     role: 'UI/UX Design Intern',

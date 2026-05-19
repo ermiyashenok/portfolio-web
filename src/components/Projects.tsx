@@ -7,7 +7,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 container-padding relative">
       <div className="absolute inset-0 tech-grid opacity-10 pointer-events-none" />
-      
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -26,7 +26,7 @@ export default function Projects() {
             GIT_LOG --ALL <ArrowRight size={16} />
           </a>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map(project => (
             <div key={project.id} className="w-full">

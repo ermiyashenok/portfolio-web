@@ -114,7 +114,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <div className="text-[10px] font-mono text-cyan-600 dark:text-cyan-400 mb-4 uppercase tracking-[0.2em] border-b border-cyan-500/20 pb-2">
             Technical Stack
           </div>
-          <motion.div 
+          <motion.div
             initial={false}
             animate={isHovered ? "show" : "hidden"}
             variants={{
@@ -149,8 +149,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               };
               const iconName = iconMap[tag] || 'code';
               return (
-                <motion.div 
-                  key={tag} 
+                <motion.div
+                  key={tag}
                   variants={{
                     show: { opacity: 1, y: 0, scale: 1 },
                     hidden: { opacity: 0, y: 10, scale: 0.8 }
@@ -158,8 +158,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   className="group/tag relative"
                 >
                   <div className="p-1.5 bg-white/5 border border-white/10 rounded-lg hover:border-cyan-500/50 hover:scale-110 transition-all duration-300">
-                    <img 
-                      src={`https://skillicons.dev/icons?i=${iconName}`} 
+                    <img
+                      src={`https://skillicons.dev/icons?i=${iconName}`}
                       alt={tag}
                       className="w-8 h-8"
                     />

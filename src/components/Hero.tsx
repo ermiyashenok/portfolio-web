@@ -22,12 +22,12 @@ export default function Hero() {
         <h1 className="text-6xl md:text-8xl font-bold text-slate-900 dark:text-white mb-4 tracking-tighter">
           Ermiyas <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600 dark:from-cyan-400 dark:to-blue-500">Henok</span>
         </h1>
-        
+
         <div className="flex items-center gap-4 mb-8">
           <h3 className="text-2xl md:text-3xl font-mono text-slate-600 dark:text-slate-400">
             &gt; Software Engineer
           </h3>
-          <motion.div 
+          <motion.div
             animate={{ opacity: [1, 0] }}
             transition={{ duration: 0.8, repeat: Infinity }}
             className="w-3 h-8 bg-cyan-500"
@@ -35,14 +35,14 @@ export default function Hero() {
         </div>
 
         <p className="max-w-xl text-lg text-slate-600 dark:text-slate-400 mb-10 leading-relaxed font-sans">
-          Specializing in high-performance distributed systems and 
-          <span className="text-slate-900 dark:text-slate-200 font-medium"> artificial intelligence integration</span>. 
+          Specializing in high-performance distributed systems and
+          <span className="text-slate-900 dark:text-slate-200 font-medium"> artificial intelligence integration</span>.
           Architecting the future one commit at a time.
         </p>
-        
+
         <div className="flex flex-wrap gap-6 items-center">
-          <a 
-            href="#projects" 
+          <a
+            href="#projects"
             className="group relative px-8 py-4 bg-cyan-500 text-slate-950 rounded-lg font-bold overflow-hidden transition-all hover:scale-105 active:scale-95"
           >
             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
@@ -53,17 +53,17 @@ export default function Hero() {
           </a>
 
           <div className="flex items-center gap-6">
-            <a 
-              href="https://github.com/ermiyashenok" 
-              target="_blank" 
+            <a
+              href="https://github.com/ermiyashenok"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
               title="GitHub"
             >
               <Github size={28} />
             </a>
-            <a 
-              href="/ermiyas-henok.pdf" 
+            <a
+              href="/ermiyas-henok.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors font-mono text-sm"
@@ -77,14 +77,14 @@ export default function Hero() {
       </motion.div>
 
       {/* Decorative Code Snippet */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 0.4, x: 0 }}
         transition={{ delay: 0.5, duration: 1 }}
         className="hidden lg:block absolute right-24 top-1/2 -translate-y-1/2 glass-card p-6 rounded-xl font-mono text-xs text-slate-500 dark:text-cyan-500/70 border-slate-200 dark:border-cyan-500/20"
       >
         <pre>
-{`const engineer = {
+          {`const engineer = {
   name: "Ermiyas Henok",
   role: "Software Engineer",
   skills: ["AI", "Distributed Systems"],
