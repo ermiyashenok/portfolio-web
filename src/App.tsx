@@ -13,11 +13,14 @@ import Experience from './components/Experience';
 import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 import ThemeToggle from './components/ThemeToggle';
+import FlowField from './components/FlowField';
 
 export default function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen relative">
+        {/* Global particle flow-field canvas */}
+        <FlowField />
         <Navbar />
         <main>
           <Hero />
