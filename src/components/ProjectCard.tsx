@@ -44,10 +44,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               key={currentImageIndex}
               src={images[currentImageIndex]}
               alt={project.title}
-              initial={{ opacity: 0 }}
+              initial={{ opacity: 1 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0 }}
               className="w-full h-full object-cover transition-opacity relative z-10"
               referrerPolicy="no-referrer"
             />

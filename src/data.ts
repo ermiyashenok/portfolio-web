@@ -109,10 +109,10 @@ export const skillCategories: SkillCategory[] = [
 export const certificates: Certificate[] = [
   {
     id: '1',
-    title: 'Placeholder Certificate',
-    issuer: 'Certifying Organization',
+    title: 'Hackathon Participation Certificate',
+    issuer: 'Hackathon',
     date: '2025',
-    description: 'Add your certificate description here.',
-    link: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
+    description: 'Recognized for participation and contribution in a competitive hackathon event, demonstrating rapid prototyping, teamwork, and innovative problem-solving skills.',
+    link: '/certificates/Ermiyas.pdf'
   }
 ];
