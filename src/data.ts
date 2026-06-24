@@ -50,6 +50,20 @@ export const projects: Project[] = [
     ]
   },
   {
+    id: '6',
+    title: 'GYM-SYS — Gym Management System',
+    description: 'A full-featured multi-tenant gym management platform with role-based access control (SuperAdmin, Manager, Staff, Owner). Features include member & trainer management, branch-level access, payment tracking in Birr, an amenities/shop module, and an Owner analytics dashboard for revenue insights.',
+    tags: ['React', 'JavaScript', 'Multi-tenant', 'Role-based Access', 'Vite'],
+    link: 'https://gym-sys-teal.vercel.app',
+    github: 'https://github.com/ermiyashenok',
+    images: [
+      '/projects/gym-sys/Screenshot 2026-06-24 142840.png',
+      '/projects/gym-sys/Screenshot 2026-06-24 142927.png',
+      '/projects/gym-sys/Screenshot 2026-06-24 143012.png',
+      '/projects/gym-sys/Screenshot 2026-06-24 143050.png'
+    ]
+  },
+  {
     id: '5',
     title: 'Letterboxd Profile Scraper',
     description: 'A modular Python-based web scraper designed to extract comprehensive film data from Letterboxd lists, featuring concurrent multi-threaded scraping, rate-limiting, and robust CSV/JSON data generation.',
