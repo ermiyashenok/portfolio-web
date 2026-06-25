@@ -14,10 +14,6 @@ export default function Hero() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative z-10"
       >
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-700 dark:text-cyan-400 text-xs font-mono mb-6">
-          <Terminal size={14} />
-          <span>SYSTEM_READY: v1.0.4</span>
-        </div>
 
         <h1 className="text-6xl md:text-8xl font-bold text-slate-900 dark:text-white mb-4 tracking-tighter">
           Ermiyas <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600 dark:from-cyan-400 dark:to-blue-500">Henok</span>
