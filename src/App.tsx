@@ -5,34 +5,29 @@
 
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Experience from './components/Experience';
-import Certificates from './components/Certificates';
-import Contact from './components/Contact';
-import ThemeToggle from './components/ThemeToggle';
+import Home from './pages/Home';
+import ProjectDetailsPage from './pages/ProjectDetailsPage';
 import FlowField from './components/FlowField';
+import ScrollToTop from './components/ScrollToTop';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 export default function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen relative">
-        {/* Global particle flow-field canvas */}
-        <FlowField />
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Skills />
-          <Projects />
-          <Experience />
-          <Certificates />
-          <Contact />
-        </main>
-      </div>
+      <BrowserRouter>
+        <ScrollToTop />
+        <div className="min-h-screen relative">
+          {/* Global particle flow-field canvas */}
+          <FlowField />
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/projects/:slug" element={<ProjectDetailsPage />} />
+            </Routes>
+          </main>
+        </div>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
-
