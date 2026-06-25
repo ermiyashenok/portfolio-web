@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ExternalLink, Github, ChevronLeft, ChevronRight, Globe, Cpu, BarChart } from 'lucide-react';
 import { Project } from '../types';
+import { Link } from 'react-router-dom';
 
 export interface ProjectCardProps {
   project: Project;
@@ -26,15 +27,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const mainLink = isDeployed ? project.link : (project.github || "https://github.com/ermiyashenok");
 
   return (
-    <motion.a
-      href={mainLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      whileHover={{ y: -5 }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="group glass-card rounded-xl overflow-hidden shadow-lg transition-all hover:border-cyan-500/50 block cursor-pointer"
-    >
+    <Link to={`/projects/${project.slug}`} className="block">
+      <motion.div
+        whileHover={{ y: -5 }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="group glass-card rounded-xl overflow-hidden shadow-lg transition-all hover:border-cyan-500/50 block cursor-pointer"
+      >
       <div className="aspect-video bg-slate-900 flex items-center justify-center relative overflow-hidden p-0">
         <div className="absolute inset-0 tech-grid opacity-20" />
 
@@ -180,7 +179,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           </div>
         </div>
       </div>
-    </motion.a>
+      </motion.div>
+    </Link>
   );
 }
 
