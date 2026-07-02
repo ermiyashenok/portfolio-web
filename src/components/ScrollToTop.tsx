@@ -2,22 +2,22 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 export default function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
     // Check if there is a hash in the URL to handle jump links
-    if (window.location.hash) {
+    if (hash) {
       setTimeout(() => {
-        const id = window.location.hash.replace('#', '');
+        const id = hash.replace('#', '');
         const element = document.getElementById(id);
         if (element) {
-          element.scrollIntoView();
+          element.scrollIntoView({ behavior: 'smooth' });
         }
       }, 0);
     } else {
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return null;
 }
