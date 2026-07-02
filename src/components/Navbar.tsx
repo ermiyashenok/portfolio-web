@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Certificates', href: '#certificates' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '/#home' },
+  { name: 'About', href: '/#about' },
+  { name: 'Skills', href: '/#skills' },
+  { name: 'Projects', href: '/#projects' },
+  { name: 'Experience', href: '/#experience' },
+  { name: 'Certificates', href: '/#certificates' },
+  { name: 'Contact', href: '/#contact' },
 ];
 
 export default function Navbar() {
@@ -33,30 +34,30 @@ export default function Navbar() {
         }`}
     >
       <div className="container-padding flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2 text-xl font-mono font-bold tracking-tighter text-slate-900 dark:text-white group">
+        <Link to="/#home" className="flex items-center gap-2 text-xl font-mono font-bold tracking-tighter text-slate-900 dark:text-white group">
           <span className="text-cyan-500 group-hover:rotate-180 transition-transform duration-500">&lt;/&gt;</span>
           <span>EH.SYS</span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
               className="text-xs font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
           <div className="flex items-center gap-4 border-l border-slate-200 dark:border-white/10 pl-8">
             <ThemeToggle />
-            <a
-              href="#contact"
+            <Link
+              to="/#contact"
               className="px-5 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-950 text-xs font-bold uppercase tracking-widest rounded hover:bg-cyan-500 dark:hover:bg-cyan-400 transition-colors"
             >
               Connect
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -83,14 +84,14 @@ export default function Navbar() {
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-lg font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
             </div>
           </motion.div>
