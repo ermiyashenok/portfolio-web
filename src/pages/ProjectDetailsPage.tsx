@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowLeft, ExternalLink, Github, Monitor, Smartphone, AlertCircle, Cpu, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -29,14 +29,14 @@ function PhoneFrame({ children }: { children: React.ReactNode }) {
     <div className="relative mx-auto border-gray-900 dark:border-gray-900 bg-gray-900 border-[12px] rounded-[3rem] h-[840px] w-[380px] shadow-2xl ring-1 ring-gray-800/50 my-4 flex-shrink-0">
       {/* Dynamic Island / Camera hole */}
       <div className="absolute top-2 left-1/2 -translate-x-1/2 w-[110px] h-[30px] bg-black rounded-full z-30 flex items-center justify-end px-2">
-         <div className="w-3 h-3 rounded-full bg-[#0a0a0a] shadow-[inset_0_0_2px_rgba(255,255,255,0.2)]"></div>
+        <div className="w-3 h-3 rounded-full bg-[#0a0a0a] shadow-[inset_0_0_2px_rgba(255,255,255,0.2)]"></div>
       </div>
-      
+
       {/* Side buttons */}
       <div className="absolute top-[120px] -left-[13px] w-[3px] h-[45px] bg-gray-800 rounded-l-md"></div>
       <div className="absolute top-[180px] -left-[13px] w-[3px] h-[45px] bg-gray-800 rounded-l-md"></div>
       <div className="absolute top-[140px] -right-[13px] w-[3px] h-[70px] bg-gray-800 rounded-r-md"></div>
-      
+
       {/* Screen */}
       <div className="rounded-[2.4rem] overflow-hidden w-full h-full bg-slate-900 relative z-10 border border-black">
         {children}
@@ -69,7 +69,7 @@ function PreviewContainer({ url, type }: { url: string; type: 'PC' | 'Mobile' })
           <div className="w-8 h-8 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin" />
         </div>
       )}
-      
+
       {iframeError ? (
         <IframeFallback url={url} type={type} />
       ) : (
@@ -79,8 +79,8 @@ function PreviewContainer({ url, type }: { url: string; type: 'PC' | 'Mobile' })
           className="w-full h-full border-none bg-white relative z-10"
           onLoad={() => setIsLoading(false)}
           onError={() => {
-             console.error('Iframe load error');
-             setIframeError(true);
+            console.error('Iframe load error');
+            setIframeError(true);
           }}
           sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
         />
@@ -113,7 +113,7 @@ function PreviewContainer({ url, type }: { url: string; type: 'PC' | 'Mobile' })
           Desktop Preview
         </h3>
       </div>
-      
+
       <div className="relative bg-slate-900 rounded-xl border border-slate-700 dark:border-slate-600 shadow-2xl overflow-hidden w-full aspect-video max-w-5xl">
         <div className="h-8 bg-slate-800 border-b border-slate-700 flex items-center px-4 gap-2 w-full absolute top-0 left-0 z-20">
           <div className="flex gap-1.5">
@@ -139,7 +139,7 @@ function PreviewContainer({ url, type }: { url: string; type: 'PC' | 'Mobile' })
 export default function ProjectDetailsPage() {
   const { slug } = useParams();
   const navigate = useNavigate();
-  
+
   const currentIndex = projects.findIndex(p => p.slug === slug);
   const project = projects[currentIndex];
 
@@ -163,13 +163,13 @@ export default function ProjectDetailsPage() {
   return (
     <div className="min-h-screen pt-24 pb-16 container-padding relative">
       <div className="max-w-[1400px] mx-auto relative z-10">
-        
+
         {/* Top Navigation */}
         <div className="flex items-center justify-between mb-8 max-w-5xl mx-auto">
           <button onClick={() => navigate(-1)} className="inline-flex items-center gap-2 text-cyan-600 dark:text-cyan-400 font-mono text-sm hover:underline cursor-pointer">
             <ArrowLeft size={16} /> GO_BACK
           </button>
-          
+
           <div className="flex items-center gap-4">
             <Link to={`/projects/${prevProject.slug}`} className="p-2 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-cyan-500 hover:text-white transition-colors text-slate-600 dark:text-slate-400" title={`Previous: ${prevProject.title}`}>
               <ChevronLeft size={20} />
@@ -181,7 +181,7 @@ export default function ProjectDetailsPage() {
         </div>
 
         {/* Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="mb-12 max-w-5xl mx-auto"
@@ -219,14 +219,14 @@ export default function ProjectDetailsPage() {
 
         {/* Two Column Layout for Description/Tech + Mobile View */}
         <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ delay: 0.2 }}
-           className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-6xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-6xl mx-auto"
         >
           {/* Left Column (Description, Tags, Learnings) */}
           <div className="lg:col-span-7 xl:col-span-8 flex flex-col gap-10">
-            
+
             {/* Tech Stack */}
             <div>
               <h2 className="text-xl font-mono font-bold mb-4 text-slate-900 dark:text-white">
