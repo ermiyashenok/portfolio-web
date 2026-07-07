@@ -11,21 +11,21 @@ export default function Certificates() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl font-mono font-bold mb-12 tracking-tight text-slate-900 dark:text-white">
-          <span className="text-cyan-500">05.</span> CERTIFICATIONS
+        <h2 className="text-xs font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-12">
+          Certificates
         </h2>
-        
+
         <div className="grid md:grid-cols-2 gap-6">
           {certificates.map((cert) => (
-            <a 
-              key={cert.id} 
-              href={cert.link || '#'} 
-              target="_blank" 
+            <a
+              key={cert.id}
+              href={cert.link || '#'}
+              target="_blank"
               rel="noopener noreferrer"
               className="block glass-card p-6 rounded-xl hover:border-cyan-500/50 transition-all group relative overflow-hidden cursor-pointer"
             >
               <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-500/5 rounded-bl-full -z-10 group-hover:bg-cyan-500/10 transition-colors" />
-              
+
               <div className="flex items-start justify-between mb-4">
                 <div className="p-3 bg-cyan-500/10 rounded-lg text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform">
                   <Award size={24} />
@@ -34,15 +34,15 @@ export default function Certificates() {
                   {cert.date}
                 </span>
               </div>
-              
+
               <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors mb-2">
                 {cert.title}
               </h3>
-              
+
               <h4 className="text-sm font-mono text-slate-600 dark:text-slate-400 uppercase tracking-widest mb-4">
                 {cert.issuer}
               </h4>
-              
+
               {cert.description && (
                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed font-sans text-sm">
                   {cert.description}
