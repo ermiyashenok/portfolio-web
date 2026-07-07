@@ -11,8 +11,8 @@ export default function About() {
             viewport={{ once: true }}
           >
             <div className="flex items-center space-x-4 mb-8">
-              <h2 className="text-3xl md:text-4xl font-black font-mono tracking-tighter uppercase whitespace-nowrap">
-                01. <span className="text-cyan-500">PROFILE_OVERVIEW</span>
+              <h2 className="text-xs font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                About
               </h2>
               <div className="h-[2px] w-full bg-cyan-500/20" />
             </div>
