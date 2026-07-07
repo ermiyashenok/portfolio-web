@@ -33,7 +33,7 @@ export default function Contact() {
           >
             <div className="absolute inset-0 bg-cyan-500 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
             <span className="relative z-10 flex items-center gap-3">
-              ermiyashenok44@gmail.com
+              Let's Talk
               <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
             </span>
           </a>
