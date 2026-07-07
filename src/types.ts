@@ -6,6 +6,7 @@ export interface Project {
   inDepthDescription: string;
   learnings: { category: string; points: string[] }[];
   tags: string[];
+  category?: 'AI' | 'Mobile' | 'Web' | string;
   link?: string;
   github?: string;
   images?: string[];

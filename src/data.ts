@@ -13,6 +13,7 @@ export const projects: Project[] = [
       { category: "Process", points: ["Iteratively tested responsive design across multiple device sizes.", "Addressed performance bottlenecks associated with loading large image assets."] }
     ],
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'API Integration'],
+    category: 'Web',
     link: 'https://anarch-stream.vercel.app',
     github: 'https://github.com/ermiyashenok',
     images: [
@@ -33,6 +34,7 @@ export const projects: Project[] = [
       { category: "Process", points: ["Focused on data integrity and validation to prevent accounting errors.", "Refined the user workflow based on practical accounting needs."] }
     ],
     tags: ['React', 'TypeScript', 'Node.js', 'Tailwind CSS'],
+    category: 'Web',
     link: 'https://account-web-gamma.vercel.app',
     github: 'https://github.com/ermiyashenok',
     images: [
@@ -54,6 +56,7 @@ export const projects: Project[] = [
       { category: "Process", points: ["Iterated on the machine learning model to improve categorization accuracy.", "Conducted extensive testing on both Android and iOS platforms."] }
     ],
     tags: ['Flutter', 'Python', 'AI', 'Machine Learning'],
+    category: 'Mobile',
     link: 'https://accmanager-one.vercel.app',
     github: 'https://github.com/ermiyashenok',
     images: [],
@@ -71,6 +74,7 @@ export const projects: Project[] = [
       { category: "Process", points: ["Focused heavily on evaluating precision-recall tradeoffs to reduce false positives.", "Documented the model development lifecycle extensively."] }
     ],
     tags: ['Python', 'Scikit-learn', 'Machine Learning', 'Data Analysis'],
+    category: 'AI',
     github: 'https://github.com/ermiyashenok',
     link: 'https://github.com/ermiyashenok',
     images: [
@@ -92,6 +96,7 @@ export const projects: Project[] = [
       { category: "Process", points: ["Conducted deep requirements gathering to align features with actual gym operational workflows.", "Iteratively refactored the codebase to ensure the application could scale across new branches."] }
     ],
     tags: ['React', 'JavaScript', 'Multi-tenant', 'Role-based Access', 'Vite'],
+    category: 'Web',
     link: 'https://gym-sys-teal.vercel.app',
     github: 'https://github.com/ermiyashenok',
     images: [
@@ -113,6 +118,7 @@ export const projects: Project[] = [
       { category: "Process", points: ["Analyzed target website DOM structures to create resilient scraping selectors.", "Iteratively updated the scraper to handle edge cases and site layout changes."] }
     ],
     tags: ['Python', 'Web Scraping', 'BeautifulSoup', 'Multi-threading'],
+    category: 'Web',
     github: 'https://github.com/ermiyashenok/l_boxd',
     images: [
       '/projects/l_boxd/Screenshot 2026-05-18 092952.png',
