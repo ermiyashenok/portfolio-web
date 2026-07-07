@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Github, Linkedin, Mail, FileText, Terminal, Cpu, Code } from 'lucide-react';
+import { Github, FileText, Cpu } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -8,17 +8,22 @@ export default function Hero() {
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative z-10"
-      >
-        <h1 className="text-6xl md:text-8xl font-bold text-slate-900 dark:text-white mb-4 tracking-tighter">
+      <div className="relative z-10">
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          className="text-6xl md:text-8xl font-bold text-slate-900 dark:text-white mb-4 tracking-tighter"
+        >
           Ermiyas <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600 dark:from-cyan-400 dark:to-blue-500">Henok</span>
-        </h1>
+        </motion.h1>
 
-        <div className="flex items-center gap-4 mb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          className="flex items-center gap-4 mb-8"
+        >
           <h3 className="text-2xl md:text-3xl font-mono text-slate-600 dark:text-slate-400">
             &gt; Software Engineer
           </h3>
@@ -27,15 +32,25 @@ export default function Hero() {
             transition={{ duration: 0.8, repeat: Infinity }}
             className="w-3 h-8 bg-cyan-500"
           />
-        </div>
+        </motion.div>
 
-        <p className="max-w-xl text-lg text-slate-600 dark:text-slate-400 mb-10 leading-relaxed font-sans">
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-xl text-lg text-slate-600 dark:text-slate-400 mb-10 leading-relaxed font-sans"
+        >
           Specializing in high-performance distributed systems and
           <span className="text-slate-900 dark:text-slate-200 font-medium"> artificial intelligence integration</span>.
           Architecting the future one commit at a time.
-        </p>
+        </motion.p>
 
-        <div className="flex flex-wrap gap-6 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-wrap gap-6 items-center"
+        >
           <a
             href="#projects"
             className="group relative px-8 py-4 bg-cyan-500 text-slate-950 rounded-lg font-bold overflow-hidden transition-all hover:scale-105 active:scale-95"
@@ -68,8 +83,8 @@ export default function Hero() {
               <span>FETCH_CV.PDF</span>
             </a>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
 
       {/* Decorative Code Snippet */}
       <motion.div
