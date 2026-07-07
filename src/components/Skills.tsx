@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Cpu, Code2, Database, Terminal } from 'lucide-react';
 
 // Mapping of skill names to their Devicon CDN SVG URLs (original colored logos)
@@ -42,8 +41,6 @@ const skillLogos: Record<string, string> = {
 };
 
 export default function Skills() {
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
-
   const categories = [
     {
       title: 'LANGUAGES',
@@ -70,9 +67,10 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 relative overflow-hidden bg-background">
       <div className="container-padding">
+        {/* Navbar-style section heading — no numbers */}
         <div className="flex items-center space-x-4 mb-12 relative z-20">
-          <h2 className="text-3xl font-mono font-bold tracking-tight uppercase text-slate-900 dark:text-white">
-            02. <span className="text-cyan-500">SYSTEM_CORES</span>
+          <h2 className="text-xs font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400">
+            Skills
           </h2>
           <div className="h-[1px] flex-1 bg-cyan-500/10" />
         </div>
@@ -82,30 +80,30 @@ export default function Skills() {
           {categories.map((cat) => (
             <div
               key={cat.title}
-              className="relative p-8 min-h-[280px] rounded-xl glass-card border-2 border-cyan-500/30 transition-all duration-500 bg-background/90 hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(34,211,238,0.5)]"
-              onMouseEnter={() => setHoveredId(cat.title)}
-              onMouseLeave={() => setHoveredId(null)}
+              className="group relative p-8 min-h-[280px] rounded-xl glass-card border-2 border-cyan-500/30 transition-all duration-500 bg-background/90 hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(34,211,238,0.5)]"
             >
-              <div className="flex items-center space-x-3 mb-4">
-                <cat.icon size={32} className="text-cyan-500" />
-                <h3 className="text-2xl font-semibold uppercase text-slate-800 dark:text-white">
+              <div className="flex items-center space-x-3 mb-6">
+                <cat.icon size={28} className="text-cyan-500" />
+                <h3 className="text-sm font-mono font-bold uppercase tracking-widest text-slate-800 dark:text-white">
                   {cat.title}
                 </h3>
               </div>
-              <ul
-                className={`grid gap-3 transition-opacity duration-300 ${hoveredId === cat.title ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-              >
+
+              {/* Skills list — always visible, icons are grayscale until hovered */}
+              <ul className="grid gap-3">
                 {cat.skills.map((skill) => (
                   <li
                     key={skill}
-                    className="flex items-center space-x-3 text-sm text-slate-600 dark:text-slate-300"
+                    className="flex items-center space-x-3 text-sm text-slate-600 dark:text-slate-300 cursor-default"
                   >
                     <img
                       src={skillLogos[skill]}
                       alt={skill}
-                      className="w-6 h-6 object-contain"
+                      className="w-6 h-6 object-contain grayscale brightness-75 dark:brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300"
                     />
-                    <span>{skill}</span>
+                    <span className="group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-200">
+                      {skill}
+                    </span>
                   </li>
                 ))}
               </ul>
