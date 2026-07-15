@@ -188,7 +188,7 @@ function PreviewContainer({ url, type, images = [] }: { url: string; type: 'PC' 
   // PC Preview
   return (
     <div className="flex flex-col items-center w-full mb-16">
-      <div className="flex items-center justify-between w-full max-w-5xl mb-4">
+      <div className="flex items-center justify-between w-full max-w-7xl mb-4">
         <div className="flex items-center gap-2">
           <Monitor className="text-cyan-500" size={20} />
           <h3 className="text-base font-mono font-bold text-slate-900 dark:text-white uppercase tracking-wider">
@@ -221,7 +221,7 @@ function PreviewContainer({ url, type, images = [] }: { url: string; type: 'PC' 
         )}
       </div>
 
-      <div className="relative bg-slate-900 rounded-xl border border-slate-700 dark:border-slate-600 shadow-2xl overflow-hidden w-full aspect-video max-w-5xl">
+      <div className="relative bg-slate-900 rounded-xl border border-slate-700 dark:border-slate-600 shadow-2xl overflow-hidden w-full aspect-video max-w-7xl">
         <div className="h-8 bg-slate-800 border-b border-slate-700 flex items-center px-4 gap-2 w-full absolute top-0 left-0 z-20">
           <div className="flex gap-1.5">
             <div className="w-3 h-3 rounded-full bg-red-500" />
@@ -291,7 +291,7 @@ export default function ProjectDetailsPage() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-12 max-w-5xl mx-auto"
+          className="mb-12 max-w-7xl mx-auto"
         >
           <div className="flex flex-wrap items-end justify-between gap-6 mb-6">
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tight">
@@ -329,7 +329,7 @@ export default function ProjectDetailsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-6xl mx-auto"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-7xl mx-auto"
         >
           {/* Left Column (Description, Tags, Learnings) */}
           <div className="lg:col-span-7 xl:col-span-8 flex flex-col gap-10">
