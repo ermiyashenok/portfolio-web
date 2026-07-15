@@ -139,6 +139,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 'Tailwind CSS': 'tailwind',
                 'Node.js': 'nodejs',
                 'Flutter': 'flutter',
+                'Dart': 'dart',
+                'Firebase': 'firebase',
                 'Python': 'py',
                 'Scikit-learn': 'sklearn',
                 'AI': 'openai',

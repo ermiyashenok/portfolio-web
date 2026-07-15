@@ -45,9 +45,62 @@ function PhoneFrame({ children }: { children: React.ReactNode }) {
   );
 }
 
-function PreviewContainer({ url, type }: { url: string; type: 'PC' | 'Mobile' }) {
+function ScreenshotCarousel({ images }: { images: string[] }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  if (!images || images.length === 0) {
+    return (
+      <div className="flex items-center justify-center h-full bg-slate-950 text-slate-500 font-mono text-sm p-4 text-center">
+        NO SCREENSHOTS AVAILABLE
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative w-full h-full bg-slate-950 flex items-center justify-center group/carousel select-none">
+      <img
+        src={images[currentIndex]}
+        alt={`Screenshot ${currentIndex + 1}`}
+        className="w-full h-full object-contain"
+        draggable={false}
+      />
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={() => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)}
+            className="absolute left-3 p-2 rounded-full bg-black/60 text-white hover:bg-cyan-500 hover:text-slate-950 transition-all z-20 opacity-0 group-hover/carousel:opacity-100 cursor-pointer shadow-lg"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            onClick={() => setCurrentIndex((prev) => (prev + 1) % images.length)}
+            className="absolute right-3 p-2 rounded-full bg-black/60 text-white hover:bg-cyan-500 hover:text-slate-950 transition-all z-20 opacity-0 group-hover/carousel:opacity-100 cursor-pointer shadow-lg"
+          >
+            <ChevronRight size={20} />
+          </button>
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-20 bg-black/60 px-3 py-1.5 rounded-full backdrop-blur-sm shadow-md">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentIndex(i)}
+                className={`w-1.5 h-1.5 rounded-full transition-all cursor-pointer ${
+                  i === currentIndex ? 'bg-cyan-400 w-3.5' : 'bg-white/40 hover:bg-white/70'
+                }`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+function PreviewContainer({ url, type, images = [] }: { url: string; type: 'PC' | 'Mobile'; images?: string[] }) {
   const [iframeError, setIframeError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [viewMode, setViewMode] = useState<'live' | 'screens'>(
+    !url || url.includes('github.com') ? 'screens' : 'live'
+  );
 
   const isGithubOnly = !url || url.includes('github.com');
   const embedUrl = isGithubOnly ? '' : url;
@@ -88,17 +141,45 @@ function PreviewContainer({ url, type }: { url: string; type: 'PC' | 'Mobile' })
     </>
   );
 
+  const Content = viewMode === 'screens' ? <ScreenshotCarousel images={images} /> : IframeContent;
+
   if (type === 'Mobile') {
     return (
       <div className="flex flex-col items-center w-full">
-        <div className="flex items-center gap-2 mb-2">
-          <Smartphone className="text-cyan-500" />
-          <h3 className="text-lg font-mono font-bold text-slate-900 dark:text-white uppercase">
-            Mobile App View
-          </h3>
+        <div className="flex items-center justify-between w-full max-w-[380px] mb-2">
+          <div className="flex items-center gap-2">
+            <Smartphone className="text-cyan-500" size={18} />
+            <h3 className="text-sm font-mono font-bold text-slate-900 dark:text-white uppercase tracking-wider">
+              Mobile Preview
+            </h3>
+          </div>
+          {images.length > 0 && !isGithubOnly && (
+            <div className="flex bg-slate-200/80 dark:bg-slate-800/80 rounded p-0.5 border border-slate-300 dark:border-slate-700">
+              <button
+                onClick={() => setViewMode('live')}
+                className={`px-2.5 py-0.5 rounded text-[10px] font-mono transition-all cursor-pointer ${
+                  viewMode === 'live'
+                    ? 'bg-cyan-500 text-slate-950 font-bold'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                }`}
+              >
+                LIVE
+              </button>
+              <button
+                onClick={() => setViewMode('screens')}
+                className={`px-2.5 py-0.5 rounded text-[10px] font-mono transition-all cursor-pointer ${
+                  viewMode === 'screens'
+                    ? 'bg-cyan-500 text-slate-950 font-bold'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                }`}
+              >
+                SCREENS
+              </button>
+            </div>
+          )}
         </div>
         <PhoneFrame>
-          {IframeContent}
+          {Content}
         </PhoneFrame>
       </div>
     );
@@ -107,11 +188,37 @@ function PreviewContainer({ url, type }: { url: string; type: 'PC' | 'Mobile' })
   // PC Preview
   return (
     <div className="flex flex-col items-center w-full mb-16">
-      <div className="flex items-center gap-2 mb-4">
-        <Monitor className="text-cyan-500" />
-        <h3 className="text-xl font-mono font-bold text-slate-900 dark:text-white uppercase">
-          Desktop Preview
-        </h3>
+      <div className="flex items-center justify-between w-full max-w-5xl mb-4">
+        <div className="flex items-center gap-2">
+          <Monitor className="text-cyan-500" size={20} />
+          <h3 className="text-base font-mono font-bold text-slate-900 dark:text-white uppercase tracking-wider">
+            Desktop Preview
+          </h3>
+        </div>
+        {images.length > 0 && !isGithubOnly && (
+          <div className="flex bg-slate-200/80 dark:bg-slate-800/80 rounded p-0.5 border border-slate-300 dark:border-slate-700">
+            <button
+              onClick={() => setViewMode('live')}
+              className={`px-2.5 py-0.5 rounded text-[10px] font-mono transition-all cursor-pointer ${
+                viewMode === 'live'
+                  ? 'bg-cyan-500 text-slate-950 font-bold'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+              }`}
+            >
+              LIVE DEMO
+            </button>
+            <button
+              onClick={() => setViewMode('screens')}
+              className={`px-2.5 py-0.5 rounded text-[10px] font-mono transition-all cursor-pointer ${
+                viewMode === 'screens'
+                  ? 'bg-cyan-500 text-slate-950 font-bold'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+              }`}
+            >
+              SCREENSHOTS
+            </button>
+          </div>
+        )}
       </div>
 
       <div className="relative bg-slate-900 rounded-xl border border-slate-700 dark:border-slate-600 shadow-2xl overflow-hidden w-full aspect-video max-w-5xl">
@@ -123,13 +230,13 @@ function PreviewContainer({ url, type }: { url: string; type: 'PC' | 'Mobile' })
           </div>
           <div className="flex-1 flex justify-center">
             <div className="bg-slate-900 rounded px-3 py-0.5 text-xs font-mono text-slate-400 w-1/2 text-center truncate">
-              {url || 'Local Environment'}
+              {viewMode === 'live' ? (url || 'Local Environment') : 'SCREENSHOTS_MODE'}
             </div>
           </div>
         </div>
 
         <div className="absolute top-8 left-0 right-0 bottom-0 bg-slate-900 z-10">
-          {IframeContent}
+          {Content}
         </div>
       </div>
     </div>
@@ -213,7 +320,7 @@ export default function ProjectDetailsPage() {
             transition={{ delay: 0.1 }}
             className="flex justify-center"
           >
-            <PreviewContainer url={mainLink} type="PC" />
+            <PreviewContainer url={mainLink} type="PC" images={project.images} />
           </motion.div>
         )}
 
@@ -278,7 +385,7 @@ export default function ProjectDetailsPage() {
 
           {/* Right Column (Mobile Preview) */}
           <div className="lg:col-span-5 xl:col-span-4 flex justify-center lg:sticky lg:top-24">
-            <PreviewContainer url={mainLink} type="Mobile" />
+            <PreviewContainer url={mainLink} type="Mobile" images={project.images} />
           </div>
 
         </motion.div>

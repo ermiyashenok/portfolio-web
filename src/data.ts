@@ -2,6 +2,28 @@ import { Project, Experience, SkillCategory, Certificate } from './types';
 
 export const projects: Project[] = [
   {
+    id: '7',
+    slug: 'maximize',
+    title: 'Maximize — Gamified Habit Tracker',
+    description: 'A gamified habit-tracking application that transforms daily routines into quest objectives. Features XP leveling, streak rewards, interactive progress charts, custom avatars, and a responsive dark/light mode interface.',
+    inDepthDescription: "Maximize is a next-generation gamified habit tracker built using Flutter. It is designed to help users establish and maintain positive habits by treating daily routines as quest objectives. The application implements a custom leveling system where users earn XP for completing tasks and milestones, alongside streak systems to encourage daily engagement. Maximize features a responsive multi-tab layout (Today, Planner, Stats, Friends, Profile) and robust state management for real-time progress updates. Additionally, it integrates social features like quest logs and friends systems, all wrapped in a sleek, customizable interface supporting both dark and light modes.",
+    learnings: [
+      { category: "Technical skills", points: ["Designed a scalable state management system in Flutter to handle real-time XP and streak tracking.", "Engineered a responsive layout adapting seamlessly from mobile screens to desktop browsers.", "Integrated Firebase Auth and Firestore database for secure user profiles, friends lists, and quest sync."] },
+      { category: "UX/UI", points: ["Crafted a gamified interface using custom widgets like ChunkyCard and ChunkyButton for a tactile, premium feel.", "Developed smooth micro-animations for level-ups and quest completions to enhance user gratification."] },
+      { category: "Process", points: ["Iteratively refactored codebase for modularity, separating state logic from presentational screen widgets.", "Ensured consistent styling across dark and light themes through unified theme configurations."] }
+    ],
+    tags: ['Flutter', 'Dart', 'Firebase', 'State Management', 'Responsive Design'],
+    category: 'Mobile',
+    link: 'https://maximize-habits.vercel.app',
+    github: 'https://github.com/ermiyashenok/habit-tracker',
+    images: [
+      '/projects/Maximize/maximize-1.png',
+      '/projects/Maximize/maximize-2.png',
+      '/projects/Maximize/maximize-3.png',
+      '/projects/Maximize/maximize-4.png'
+    ]
+  },
+  {
     id: '1',
     slug: 'anarch-streaming',
     title: 'Anarch Streaming',
@@ -38,10 +60,10 @@ export const projects: Project[] = [
     link: 'https://account-web-gamma.vercel.app',
     github: 'https://github.com/ermiyashenok',
     images: [
-      '/projects/account manger web/Screenshot 2026-05-02 131142.png',
-      '/projects/account manger web/Screenshot 2026-05-02 131159.png',
-      '/projects/account manger web/Screenshot 2026-05-02 131305.png',
-      '/projects/account manger web/Screenshot 2026-05-02 131518.png'
+      '/projects/account manger web/account-1.png',
+      '/projects/account manger web/account-2.png',
+      '/projects/account manger web/account-3.png',
+      '/projects/account manger web/account-4.png'
     ]
   },
   {
